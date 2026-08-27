@@ -1,0 +1,4 @@
+PORT = 5000
+DEBUG = True
+SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+SENDGRID_API_KEY = "SG.abcdef1234567890abcdef.1234567890abcdef_fake_helpdesk_key"
