@@ -1,0 +1,7 @@
+title = "custom gitleaks config"
+
+[[rules]]
+id = "sendgrid-api-key-loose"
+description = "SendGrid API Key (formato flexible)"
+regex = '''SG\.[A-Za-z0-9_\-]{10,}\.[A-Za-z0-9_\-]{10,}'''
+tags = ["key", "sendgrid"]

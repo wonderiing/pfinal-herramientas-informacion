@@ -1,0 +1,19 @@
+[project]
+name = "fixit-helpdesk-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "wonderiing", email = "ca223871@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "bandit>=1.9.4",
+]
+
+[project.scripts]
+fixit-helpdesk-app = "fixit_helpdesk_app:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
