@@ -7,7 +7,7 @@ on:
 
 jobs:
   gitleaks:
-    name: Run Gitleaks
+    name: Run Gitleaks (full scan)
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,9 @@ jobs:
         with:
           fetch-depth: 0   
 
-      - name: Run Gitleaks scan
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download and run Gitleaks
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.24.3/gitleaks_8.24.3_linux_x64.tar.gz -o gitleaks.tar.gz
+          tar -xzf gitleaks.tar.gz gitleaks
+          ./gitleaks detect --source . -v --redact
+  
